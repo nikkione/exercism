@@ -27,8 +27,6 @@ White: 9
 From the example above: brown-green should return 15 brown-green-violet should return 15 too, ignoring the third color.
 */
 
-<?php
-
 /*
  * By adding type hints and enabling strict type checking, code can become
  * easier to read, self-documenting and reduce the number of potential bugs.
@@ -51,19 +49,18 @@ From the example above: brown-green should return 15 brown-green-violet should r
  * To disable strict typing, comment out the directive below.
  */
 
-declare(strict_types=1);
 
 class ResistorColorDuo
 {
     public function getColorsValue(array $colors): int
     {
-        $array = ["black", "brown", "red", "orange", "yellow", "green", "blue", "violet", "grey", "white"] ;
+        $array = ["black", "brown", "red", "orange", "yellow", "green", "blue", "violet", "grey", "white"];
         $string = "";
-        $i=0;
-        foreach($colors as $color) {
+        $i = 0;
+        foreach ($colors as $color) {
             $string .= array_search($color, $array);
             $i++;
-            if ($i == 2){
+            if ($i == 2) {
                 break;
             }
         }
